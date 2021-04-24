@@ -1,15 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../assets/spacex-logo.png'
+import logo from '../assets/spacex-logo.png';
+import refreshIcon from '../assets/icon/refresh.png';
+import Button from '../components/button';
 
-const HeaderBody = styled.div`
+const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 32px;
+  width: 100%;
 `;
 
-const LogoDiv = styled.div`
+const LogoWrapper = styled.div`
   display: flex;
   margin-left: 40px;
 `;
@@ -31,14 +34,16 @@ const LogoText = styled.p`
   left: -20px;
 `;
 
+const headerButtonText = 'Reload Data';
+
 export default function Header() {
   return (
-    <HeaderBody>
-      <LogoDiv>
+    <Container>
+      <LogoWrapper>
         <LogoImage src={logo} alt='logo'/>
         <LogoText>LAUNCHES</LogoText>
-      </LogoDiv>
-      <div />
-    </HeaderBody>
+      </LogoWrapper>
+      <Button text={headerButtonText} icon={refreshIcon}/>
+    </Container>
   );
 }
