@@ -1,5 +1,8 @@
 import React from 'react';
+import Header from './containers/header';
 
 export const App = () => (
-  <h1>Hello World</h1>
+  <div>
+    <Header />
+  </div>
 );
