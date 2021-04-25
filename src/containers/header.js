@@ -43,7 +43,7 @@ export default function Header() {
         <LogoImage src={logo} alt='logo'/>
         <LogoText>LAUNCHES</LogoText>
       </LogoWrapper>
-      <Button text={headerButtonText} icon={refreshIcon}/>
+      <Button text={headerButtonText} icon={refreshIcon} borderRadious/>
     </Container>
   );
 }

@@ -4,7 +4,8 @@ import Icon from '../components/icon';
 
 const Container = styled.div`
   background-color: #215184;
-  border-radius: 21px 0 0 21px;
+  ${({ borderRadious }) => `${borderRadious && `border-radius: 21px 0 0 21px`}`};
+  ${({ borderRadious }) => `${!borderRadious && `margin-right: 5px`}`};
   display: flex;
   align-items: center;
   height: 40px;
@@ -21,14 +22,16 @@ const ButtonText = styled.p`
 type Props = {
   text: String,
   icon: File,
+  borderRadious: Boolean,
 };
 
 export default function Button({
   text,
   icon,
+  borderRadious,
 }: Props) {
   return (
-    <Container>
+    <Container borderRadious={borderRadious}>
       <ButtonText>{text}</ButtonText>
       {icon && <Icon icon={icon}/>}
     </Container>
