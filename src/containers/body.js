@@ -4,6 +4,7 @@ import FiltersSort from '../containers/filtersSort';
 import Image from '../components/image';
 import image from '../assets/img/launch-home@2x.png';
 import hooks from '../router/hooks';
+import LaunchesTable from './launchesTable';
 
 const Container = styled.div`
   margin: 50px 80px;
@@ -18,14 +19,13 @@ export default function Body() {
   const {
     allLaunches,
   } = hooks();
-  
-  console.log(allLaunches);
 
   return (
     <Container>
       <FiltersSort />
       <Wrapper>
         <Image image={image}/>
+        <LaunchesTable allLaunches={allLaunches} />
       </Wrapper>
     </Container>
   );
