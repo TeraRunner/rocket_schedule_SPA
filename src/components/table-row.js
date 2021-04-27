@@ -55,6 +55,18 @@ const RocketId = styled.p`
   justify-content: flex-end;
 `;
 
+const getStringifiedDate = inputDate => {
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+  const date = new Date(inputDate);
+  const ordinal = number => {
+    return["st","nd","rd"][((number+90)%100-10)%10-1]||"th"
+  };
+
+  return `${date.getDate()}${ordinal(date.getDate())} ${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+}
+
 export default function TableRow({
   launch: {
     flight_number,
@@ -65,18 +77,6 @@ export default function TableRow({
     launch_date_local,
   },
 }: Props) {
-
-  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-  ];
-
-  const date = new Date(launch_date_local);
-
-  const ordinal = number => {
-    return["st","nd","rd"][((number+90)%100-10)%10-1]||"th"
-  };
-
-  const dateString = `${date.getDate()}${ordinal(date.getDate())} ${monthNames[date.getMonth()]} ${date.getFullYear()}`;
 
   return (
     <Container>
@@ -89,7 +89,7 @@ export default function TableRow({
         </MissionName>
       </LeftWrapper>
       <RightWrapper>
-        <DateComponent>{dateString}</DateComponent>
+        <DateComponent>{getStringifiedDate(launch_date_local)}</DateComponent>
         <RocketId>{rocket_name}</RocketId>
       </RightWrapper>
     </Container>
