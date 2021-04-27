@@ -11,14 +11,12 @@ export default () => {
   useEffect (() => {
     const fetchLaunches = async () => {
       const launches = await axios("https://api.spacexdata.com/v3/launches");
-      console.log(launches);
-      dispatch(getLaunches(launches));
+      dispatch(getLaunches(launches.data));
     };
     fetchLaunches();
   }, [dispatch]);
 
   const allLaunches = useSelector(state => state);
-  console.log(allLaunches);
 
   return allLaunches;
 };

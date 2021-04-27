@@ -1,8 +1,8 @@
 import { GET_LAUNCHES, GET_ERROR } from './types';
 
-export const getLaunches = (payload) => ({
+export const getLaunches = (allLaunches) => ({
   type: GET_LAUNCHES,
-  payload,
+  payload: allLaunches,
 });
 
 export const getError = (error) => ({
