@@ -7,7 +7,6 @@ const Container = styled.div`
   justify-content: flex-end;
 `;
 
-const sortText = 'Sort Descending';
 const filterByYearText = 'Filter by Year';
 
 type Props = {
@@ -31,7 +30,6 @@ export default function FiltersSort({
           options={filteredYears()}
         />
       }
-      {/* <Select text={sortText} icon={sortIcon}/> */}
     </Container>
   );
 }

@@ -1,5 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { getFilteredYear } from '../router/actions/actions';
 
 const SelectContainer = styled.div`
   ${({ borderRadious }) => `${borderRadious && `border-radius: 21px 0 0 21px`}`};
@@ -50,7 +52,7 @@ export default function Button({
   borderRadious,
   options,
 }: Props) {
-
+  const dispatch = useDispatch();
   const optionsComponent = options.map(option => (
     <StyledOption key={option} value={option}>
       {option}
@@ -64,6 +66,7 @@ export default function Button({
       </SelectText>
       <SelectComponent 
         borderRadious={borderRadious}
+        onChange={e => dispatch(getFilteredYear(e.target.value))}
       >
         <StyledOption value="" />
         {optionsComponent}

@@ -1,8 +1,9 @@
-import { GET_ERROR, GET_LAUNCHES } from '../actions/types';
+import { GET_ERROR, GET_LAUNCHES, GET_FILTERED_YEAR } from '../actions/types';
 
 const initialState = {
   allLaunches: [],
   error: null,
+  filteredYear: null,
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -18,6 +19,11 @@ export default (state = initialState, action) => {
         ...state,
         error: action.error,
       };
+    case GET_FILTERED_YEAR:
+      return {
+        ...state,
+        filteredYear: action.payload,
+      }
     default:
       return state;
   }

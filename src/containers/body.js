@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import FiltersSort from '../containers/filtersSort';
 import Image from '../components/image';
@@ -17,12 +18,18 @@ export default function Body() {
     allLaunches,
   } = hooks();
 
+  const filteredYear = useSelector(state => state.filteredYear && state.filteredYear); 
+  const AppliyingFilters = () => allLaunches.filter(launch => launch.launch_year.includes(filteredYear));
+
   return (
     <Container>
       <FiltersSort allLaunches={allLaunches && allLaunches}/>
       <Wrapper>
         <Image image={image}/>
-        <LaunchesTable allLaunches={allLaunches && allLaunches} />
+        <LaunchesTable allLaunches={!filteredYear ? 
+          allLaunches && allLaunches 
+          : AppliyingFilters()
+        }/>
       </Wrapper>
     </Container>
   );
