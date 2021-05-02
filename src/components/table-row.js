@@ -20,6 +20,8 @@ const Container = styled.div`
   font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
   font-weight: 700;
   color: #545454;
+  min-width: 30%;
+  max-height: 100px;
 `;
 
 const LeftWrapper = styled.div`
@@ -34,10 +36,6 @@ const RightWrapper = styled.div`
 
 const FlightNumber = styled.p`
   margin: 0 30px;
-`;
-
-const MissionName = styled.p`
-  
 `;
 
 const DateComponent = styled.p`
@@ -81,9 +79,9 @@ export default function TableRow({
         <FlightNumber>
           #{flight_number}
         </FlightNumber>
-        <MissionName>
+        <p>
           {mission_name}
-        </MissionName>
+        </p>
       </LeftWrapper>
       <RightWrapper>
         <DateComponent>{getStringifiedDate(launch_date_local)}</DateComponent>

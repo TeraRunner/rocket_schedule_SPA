@@ -9,6 +9,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 1440px;
 `;
 
 export const App = () => (

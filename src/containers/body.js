@@ -7,10 +7,9 @@ import image from '../assets/img/launch-home@2x.png';
 import hooks from '../router/hooks';
 import LaunchesTable from './launchesTable';
 
-const Container = styled.div``;
-
 const Wrapper = styled.div`
   display: flex;
+  justify-content: center;
 `;
 
 export default function Body() {
@@ -22,7 +21,7 @@ export default function Body() {
   const AppliyingFilters = () => allLaunches.filter(launch => launch.launch_year.includes(filteredYear));
 
   return (
-    <Container>
+    <div>
       <FiltersSort allLaunches={allLaunches && allLaunches}/>
       <Wrapper>
         <Image image={image}/>
@@ -31,6 +30,6 @@ export default function Body() {
           : AppliyingFilters()
         }/>
       </Wrapper>
-    </Container>
+    </div>
   );
 }
