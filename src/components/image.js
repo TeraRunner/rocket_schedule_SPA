@@ -9,6 +9,8 @@ const Container = styled.img`
   max-width: 535px;
   max-height: 700px;
   margin: 50px;
+  top: 50px;
+  position: sticky;
 `;
 
 export default function Icon({

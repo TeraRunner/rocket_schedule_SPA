@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Icon from '../components/icon';
 
-const Container = styled.div`
+const ButtonContainer = styled.button`
   background-color: #215184;
   ${({ borderRadious }) => `${borderRadious && `border-radius: 21px 0 0 21px`}`};
   ${({ borderRadious }) => `${!borderRadious && `margin-right: 5px`}`};
@@ -31,9 +31,9 @@ export default function Button({
   borderRadious,
 }: Props) {
   return (
-    <Container borderRadious={borderRadious}>
+    <ButtonContainer borderRadious={borderRadious}>
       <ButtonText>{text}</ButtonText>
       {icon && <Icon icon={icon}/>}
-    </Container>
+    </ButtonContainer>
   );
 }

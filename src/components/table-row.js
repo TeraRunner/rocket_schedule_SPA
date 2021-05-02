@@ -34,23 +34,20 @@ const RightWrapper = styled.div`
 
 const FlightNumber = styled.p`
   margin: 0 30px;
-  font-size: 40px;
 `;
 
 const MissionName = styled.p`
-  font-size: 32px;
+  
 `;
 
 const DateComponent = styled.p`
   margin: 10px;
-  font-size: 16px;
   display: flex;
   justify-content: flex-end;
 `;
 
 const RocketId = styled.p`
   margin: 5px;
-  font-size: 24px;
   display: flex;
   justify-content: flex-end;
 `;

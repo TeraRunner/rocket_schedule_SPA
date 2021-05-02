@@ -55,12 +55,7 @@ const StyledSpinner = styled.svg`
 const Container = styled.div`
   margin: 50px 0;
   display: flex;
-  justify-content: center;
-  width: 100%;
-  overflow: y-scroll;
   flex-direction: column;
-  position: relative;
-  top: 1800px;
 `;
 
 export default function LaunchesTable({
@@ -71,7 +66,7 @@ export default function LaunchesTable({
     <Container>
       {!allLaunches ? 
         <Spinner /> 
-        : allLaunches.map((launch, index) => <TableRow launch={launch} key={index}/>
+        : allLaunches && allLaunches.map((launch, index) => <TableRow launch={launch} key={index}/>
       )}
     </Container>
   );

@@ -6,26 +6,23 @@ import image from '../assets/img/launch-home@2x.png';
 import hooks from '../router/hooks';
 import LaunchesTable from './launchesTable';
 
-const Container = styled.div`
-  margin: 50px 80px;
-`;
+const Container = styled.div``;
 
 const Wrapper = styled.div`
   display: flex;
 `;
 
 export default function Body() {
-
   const {
     allLaunches,
   } = hooks();
 
   return (
     <Container>
-      <FiltersSort />
+      <FiltersSort allLaunches={allLaunches && allLaunches}/>
       <Wrapper>
         <Image image={image}/>
-        <LaunchesTable allLaunches={allLaunches} />
+        <LaunchesTable allLaunches={allLaunches && allLaunches} />
       </Wrapper>
     </Container>
   );
