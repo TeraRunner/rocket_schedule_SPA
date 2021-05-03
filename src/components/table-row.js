@@ -11,8 +11,6 @@ type Props = {
 
 const Container = styled.div`
   border-radius: 10px;
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: space-between;
   box-shadow: 2px 2px #000000;
@@ -20,8 +18,8 @@ const Container = styled.div`
   font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
   font-weight: 700;
   color: #545454;
-  min-width: 30%;
   max-height: 100px;
+  min-width: 70%;
 `;
 
 const LeftWrapper = styled.div`

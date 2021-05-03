@@ -10,6 +10,7 @@ import LaunchesTable from './launchesTable';
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  min-width: 70%;
 `;
 
 export default function Body() {
